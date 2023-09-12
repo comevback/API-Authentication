@@ -10,7 +10,7 @@ const API_URL = "https://secrets-api.appbrewery.com/";
 let yourUsername = "xingong1";
 let yourPassword = "xingong1";
 let yourAPIKey = "";
-let yourBearerToken = "";
+let yourBearerToken = "Bearer f72000d9-72d2-4691-9335-dc218549261c";
 
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -130,9 +130,9 @@ app.get("/bearerToken", async(req, res) => {
     },
   });
   */
-  const result = await axios.get(API_URL + "/secrets/41", {
+  const result = await axios.get(API_URL + "secrets/41", {
     headers:{
-      "Authorization": yourBearerToken
+      Authorization: yourBearerToken
     }
   });
   const cont = JSON.stringify(result.data);
